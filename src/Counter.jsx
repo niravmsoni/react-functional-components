@@ -1,26 +1,19 @@
 import { useState } from "react";
 
-function initialSetup(){
-    console.log('Inside InitialSetup');
-    return 10;
-}
-const Counter = () => {
-    
-    const [counter, setCounter] = useState(initialSetup());
+const Counter = () => {    
+    const [counterState, setCounterState] = useState(() =>{
+        return {counter: 10}
+    });
 
     function incrementCounter(){
-        setCounter((prevState) => {
-            return prevState + 1;
+        setCounterState((prevState) => {
+            return {counter: prevState.counter + 1};
         });
     }
 
     function decrementCounter(){
-        setCounter((prevState) => {
-            return prevState - 1;
-        });
-
-        setCounter((prevState) => {
-            return prevState - 1;
+        setCounterState((prevState) => {
+            return {counter: prevState.counter - 1};
         });
     }
 
@@ -32,7 +25,7 @@ const Counter = () => {
             <button className="btn btn-danger m-1" onClick={decrementCounter}>-1</button>
             <span className="h4">
                 Counter: &nbsp;
-                <span className="text-success">{counter}</span>
+                <span className="text-success">{counterState.counter}</span>
             </span>
         </div>
     );

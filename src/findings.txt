@@ -40,7 +40,7 @@
         &
         setCounter = how we will update that particular state i.e. setCounter is a method that we will create to increment the count
 
-100.
+100. Updating State with integers
         Created 2 new functions and bound them with OnClick event:
             incrementCounter() and decrementCounter()
 
@@ -105,3 +105,4 @@
 
              //In this case, every time we hit +1 or -1, the initialSetup() is called.
 
+101. States with object
