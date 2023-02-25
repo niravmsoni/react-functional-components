@@ -4,4 +4,38 @@
     We can write entire application using functional components now
     Created basic structure of WatchOPedia
 
-98. Created basic UI for counter where we created 2 buttons: +1 and -1 and integrated it in index.js
+98. 
+    Created basic UI for counter where we created 2 buttons: +1 and -1 and integrated it in index.js
+
+99. UseState
+    With functional components, we cannot directly use state(Like we used in class based components)
+    We need to import hooks. For this, the hook we're going to use is known as useState().
+
+    Hooks can only be used in FUNCTIONAL COMPONENTS.
+    Need to import hook by using:
+        import {useState} from "react";
+
+    JS Code below:
+    const Counter = () => {
+
+    useState();
+    useState();
+
+    return (
+        <div className="col-12 col-md-2 offset-md-5 border  text-white">
+        </div>
+    );
+};
+
+    With React, the hooks cannot be conditional. Every time a component is rendered, all useState() will be executed in SEQUENTIAL ORDER
+
+    We can initialize whatever value we want the state to have in the useState parameter.
+    For ex: In our counter app, since we want it to start always with 0, we will write the statement like this:
+        useState(0);
+
+    useState() always returns 2 values as below:
+        const [counter, setCounter] = useState(10);
+    where
+        counter = name of the counter
+        &
+        setCounter = how we will update that particular state i.e. setCounter is a method that we will create to increment the count

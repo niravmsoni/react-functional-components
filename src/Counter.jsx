@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 const Counter = () => {
+    
+    const [counter, setCounter] = useState(10);
+
     return (
         <div className="col-12 col-md-2 offset-md-5 border  text-white">
             <span className="h2 pt-4 m-2 text-white-50">Fun Counter</span>
@@ -7,7 +12,7 @@ const Counter = () => {
             <button className="btn btn-danger m-1">-1</button>
             <span className="h4">
                 Counter: &nbsp;
-                <span className="text-success">0</span>
+                <span className="text-success">{counter}</span>
             </span>
         </div>
     );
