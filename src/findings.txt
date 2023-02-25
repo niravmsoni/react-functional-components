@@ -140,3 +140,9 @@
     To solve the problem, we can have to separate useStates(), one for managing just the counter and 2nd to display fun.
 
     That way, if we remove the ...prevState spreadOperator from the increment/decrement functions, it will not impact the other state and fun will be displayed constantly.
+
+104. Movies section.
+    Created 3 new components: AddMovie, MovieList and MoviePage.
+    Added a form in AddMovie component.
+    In MoviePage, imported both the remaining components and shown them
+    
