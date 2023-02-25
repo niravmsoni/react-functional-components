@@ -147,4 +147,7 @@
     In MoviePage, imported both the remaining components and shown them
 
 105. Add Movie.
-    Completed add movie implementation.
+    In MoviePage, created a local function to get the new movie and set it to state by calling setMovieState method.
+    Passed that localFunction as a prop to addMovie.
+    In AddMovie, we created a controlled component for which we had to create a local state that got updated with OnChange of textbox.
+    On submit of form, created a local function and called the handleAddMovie function from it.
