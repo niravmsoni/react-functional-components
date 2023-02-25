@@ -39,3 +39,69 @@
         counter = name of the counter
         &
         setCounter = how we will update that particular state i.e. setCounter is a method that we will create to increment the count
+
+100.
+        Created 2 new functions and bound them with OnClick event:
+            incrementCounter() and decrementCounter()
+
+        Simply access the counter variable(since that is written as output of useState) and +1 or -1 to it.
+        //Approach#1[INCORRECT]
+            function incrementCounter(){
+                setCounter(counter + 1);
+            }
+
+            function decrementCounter(){
+                setCounter(counter - 1);
+                setCounter(counter - 1);
+            }
+
+        If we access it in this manner, decrementCounter will only decrement it by 1.
+        SAME AS CLASS COMPONENT, we need to use and pass the PREVSTATE and work with that and not directly with the counter variable
+
+        //Approach#2[CORRECT]
+            function incrementCounter(){
+                setCounter((prevState) => {
+                    return prevState + 1;
+                });
+            }
+
+            function decrementCounter(){
+                setCounter((prevState) => {
+                    return prevState - 1;
+                });
+
+                setCounter((prevState) => {
+                    return prevState - 1;
+                });
+            }
+
+    Important
+        - For setting default value of a state,
+            In class component,
+                We used to do it in constructor and it was executed ONLY ONCE.
+            In fn component
+                Everytime, the component is re-rendered, it will reset it to the default value specified
+
+            For MAKING SURE WITH FN COMPONENT, THE EXECUTION HAPPENS ONLY ONCE, ASSIGN VALUE IN USESTATE USING OBJECT Like:
+                useState(() =>{
+                    return 10;
+                    });
+
+            To prove it, if we have the below statement, it DOES NOT UPDATE WHEN COMPONENT IS RE-rendered(Hitting +1 or -1)
+                const [counter, setCounter] = useState(() =>{
+                    console.log('Inside useState');
+                    return 10;
+                });
+
+            To counter it,
+
+
+            function initialSetup(){
+                console.log('Inside InitialSetup');
+                return 10;
+            }
+
+             const [counter, setCounter] = useState(initialSetup());
+
+             //In this case, every time we hit +1 or -1, the initialSetup() is called.
+
