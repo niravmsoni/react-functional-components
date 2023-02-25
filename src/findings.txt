@@ -106,3 +106,27 @@
              //In this case, every time we hit +1 or -1, the initialSetup() is called.
 
 101. States with object
+
+    Under useState(), changed "return 10;" to "return {counter: 10}".
+
+        const [counterState, setCounterState] = useState(() =>{
+        return {counter: 10}
+    });
+
+
+    Then, to alter the state value, made sure to return the counter object by +1 or -1 value of prevState.counter.
+    Anytime, to access the state, used the {counterState.counter} value
+
+    function incrementCounter(){
+        setCounterState((prevState) => {
+            return {counter: prevState.counter + 1};
+        });
+    }
+
+    function decrementCounter(){
+        setCounterState((prevState) => {
+            return {counter: prevState.counter - 1};
+        });
+    }
+
+    <span className="text-success">{counterState.counter}</span>
