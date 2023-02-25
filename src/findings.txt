@@ -130,3 +130,8 @@
     }
 
     <span className="text-success">{counterState.counter}</span>
+
+102. Difference w.r.t class component
+    Implementation of useState and setState are different.
+    With useState(), IT COMPLETELY REPLACES ALL THE STATE PROPERTIES WITH WHAT WE ARE UPDATING IT WITH.
+    WHEREAS with setState(), ONLY THE VALUE WHICH WE'RE CHANGING WILL BE IMPACTED AND NOT THE COMPLETE STATE OBJECT
