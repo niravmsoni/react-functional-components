@@ -135,3 +135,8 @@
     Implementation of useState and setState are different.
     With useState(), IT COMPLETELY REPLACES ALL THE STATE PROPERTIES WITH WHAT WE ARE UPDATING IT WITH.
     WHEREAS with setState(), ONLY THE VALUE WHICH WE'RE CHANGING WILL BE IMPACTED AND NOT THE COMPLETE STATE OBJECT
+
+103. Separation useStates.
+    To solve the problem, we can have to separate useStates(), one for managing just the counter and 2nd to display fun.
+
+    That way, if we remove the ...prevState spreadOperator from the increment/decrement functions, it will not impact the other state and fun will be displayed constantly.
